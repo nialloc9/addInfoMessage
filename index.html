@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Color Change</title>
+
+    <!-- CSS STYLES -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JS JQUERY-->
+    <script src="js/jquery.js"></script>
+
+    <!-- JS ADD COLOR INPUT BOX -->
+    <script src="js/addInfoMessage.js"></script>
+
+    <!-- JS CUSTOM -->
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                if($('#box').val() > 0){
+                    addInfoMessage('SUCCESS: Your number is greater than 0.', 'info', true, 'success-message', 'error-message');
+                }else{
+                    addInfoMessage('ERROR: Your number is not greater than 0.', 'info', false, 'success-message', 'error-message');
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <input type="number" value="0" id="box"/><br>
+    <input type="button" value="Send" id="btn"><br>
+    <p id="info"></p>
+</body>
+</html>
