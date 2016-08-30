@@ -2,29 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Input Color Change</title>
+    <title>Add Info Area</title>
 
     <!-- CSS STYLES -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="public/css/styles.css">
 
     <!-- JS JQUERY-->
-    <script src="js/jquery.js"></script>
+    <script src="public/lib/jquery.js"></script>
 
     <!-- JS ADD COLOR INPUT BOX -->
-    <script src="js/addInfoMessage.js"></script>
+    <script src="public/js/addInfoMessage.js"></script>
 
     <!-- JS CUSTOM -->
-    <script>
-        $(document).ready(function(){
-            $('#btn').click(function(){
-                if($('#box').val() > 0){
-                    addInfoMessage('SUCCESS: Your number is greater than 0.', 'info', true, 'success-message', 'error-message');
-                }else{
-                    addInfoMessage('ERROR: Your number is not greater than 0.', 'info', false, 'success-message', 'error-message');
-                }
-            });
-        });
-    </script>
+    <script type="text/javascript" src="public/js/index.js"></script>
 
 </head>
 <body>
