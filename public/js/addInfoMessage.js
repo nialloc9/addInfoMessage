@@ -19,14 +19,14 @@ var infoMessage = {
         return instance;
     },
 
-    add: function (message, messageAreaId, pOrN, successClass, errorClass) {
+    add: function (message, messageAreaId, tOrF, successClass, errorClass) {
 
         //cache Dom
         var infoArea = '#' + messageAreaId,
             $infoArea = $(infoArea);
 
         //BOOLEAN CHECK
-        if (pOrN) {
+        if (tOrF) {
             //ERROR CLASS CHECK
             if ($infoArea.hasClass(errorClass)) {
                 $infoArea.removeClass(errorClass);
