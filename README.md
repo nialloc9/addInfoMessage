@@ -79,7 +79,3 @@ jQuery
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
-
-Anybody can use this code for private or commercial purposes.
-
