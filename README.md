@@ -77,5 +77,3 @@ jQuery
 
 * **Niall O Connor** - [nialloc9](https://github.com/nialloc9)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
