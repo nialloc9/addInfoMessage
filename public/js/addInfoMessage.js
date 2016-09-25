@@ -1,36 +1,75 @@
 //ADD INFO MESSAGE
-function addInfoMessage(message, messageAreaId, pOrN, successClass, errorClass){
+var infoMessage = {
+    create: function (values) {
 
-    //ASSIGN VARIABLES
-    var infoArea = '#' + messageAreaId;
-
-    //BOOLEAN CHECK
-    if(pOrN){
-        //ERROR CLASS CHECK
-        if($(infoArea).hasClass(errorClass)){
-            $(infoArea).removeClass(errorClass);
+        //check  param
+        if(values == null || values == undefined){
+            values = {};
         }
 
-        //SUCCESS CLASS CHECK
-        if($(infoArea).hasClass(successClass)){
-            //DO NOTHING
-        }else{
-            $(infoArea).addClass(successClass);
-        }
-    }else{ //BOOLEAN CHECK ELSE
-        //SUCCESS CLASS CHECK
-        if($(infoArea).hasClass(successClass)){
-            $(infoArea).removeClass(successClass);
+        //create new instance of infoMessage
+        var instance = Object.create(this);
+
+        //adds any value from the values object as property or method of the parent or child
+        Object.keys(values).forEach(function (key){
+           instance[key] = values[key];
+        });
+
+        //return the new instance of infoMessage
+        return instance;
+    },
+
+    add: function (message, messageAreaId, pOrN, successClass, errorClass) {
+
+        //cache Dom
+        var infoArea = '#' + messageAreaId,
+            $infoArea = $(infoArea);
+
+        //BOOLEAN CHECK
+        if (pOrN) {
+            //ERROR CLASS CHECK
+            if ($infoArea.hasClass(errorClass)) {
+                $infoArea.removeClass(errorClass);
+            }
+
+            //SUCCESS CLASS CHECK
+            if ($infoArea.hasClass(successClass)) {
+                //DO NOTHING
+            } else {
+                $infoArea.addClass(successClass);
+            }
+        } else { //BOOLEAN CHECK ELSE
+            //SUCCESS CLASS CHECK
+            if ($infoArea.hasClass(successClass)) {
+                $infoArea.removeClass(successClass);
+            }
+
+            //ERROR CLASS CHECK
+            if ($infoArea.hasClass(errorClass)) {
+                //DO NOTHING
+            } else {
+                $infoArea.addClass(errorClass);
+            }
         }
 
-        //ERROR CLASS CHECK
-        if($(infoArea).hasClass(errorClass)){
-            //DO NOTHING
-        }else{
-            $(infoArea).addClass(errorClass);
-        }
+        //_render
+        this._render($infoArea, message)
+    },
+
+    _render: function (infoArea, message) {
+        //render info
+        infoArea.text(message);
     }
+};
 
-    //RENDER INFO
-    $(infoArea).text(message);
-}
+
+
+
+
+
+
+
+
+
+
+
