@@ -35,7 +35,7 @@ methods and properties but also have new ones.
         
         //alert(parent.newProperty); --> This will fail because newProperty is a property of child not parent
 
-### add() arguements
+### add() Arguements
 
 *message:* The message you want to appear. e.g "My Message"
 
@@ -75,7 +75,7 @@ jQuery
 
 ## Authors
 
-* **Niall O Connor** - *Initial work* - [nialloc9](https://github.com/nialloc9)
+* **Niall O Connor** - [nialloc9](https://github.com/nialloc9)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
